@@ -2,7 +2,7 @@
 
 const ZigBeeLightDevice = require('homey-meshdriver').ZigBeeLightDevice;
 
-class LightifyGardenpoleRGBWZigBee extends ZigBeeLightDevice {
+class LightifyGardenpoleMiniRGBWZigBee extends ZigBeeLightDevice {
 
 }
 

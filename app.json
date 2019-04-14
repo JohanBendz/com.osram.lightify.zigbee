@@ -1,6 +1,6 @@
 {
   "id": "com.osram.lightify.zigbee",
-  "version": "1.0.8",
+  "version": "1.2.4",
   "sdk": 2,
   "compatibility": ">=1.5.0",
   "category": "lights",
@@ -15,12 +15,19 @@
   "author": {
     "name": "Athom B.V."
   },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Johan Bendz",
+        "email": "Johan_Bendz@hotmail.com"
+      }
+    ]
+  },
   "images": {
     "large": "assets/images/large.png",
     "small": "assets/images/small.png"
   },
-  "speech": [],
-  "drivers": [
+    "drivers": [
     {
       "id": "lightify_plug",
       "name": {
@@ -37,7 +44,10 @@
       },
       "zigbee": {
         "manufacturerName": "OSRAM",
-        "productId": ["Plug 01", "Plug - LIGHTIFY"],
+        "productId": [
+          "Plug 01",
+          "Plug - LIGHTIFY"
+        ],
         "deviceId": 16,
         "profileId": 49246,
         "learnmode": {
@@ -51,8 +61,8 @@
     {
       "id": "lightify_rgbw",
       "name": {
-        "en": "RGBW Bulb (ZigBee)",
-        "nl": "RGBW Lamp (ZigBee)"
+        "en": "RGBW Bulb E27 (ZigBee)",
+        "nl": "RGBW Lamp E27 (ZigBee)"
       },
       "class": "light",
       "capabilities": [
@@ -69,13 +79,228 @@
       },
       "zigbee": {
         "manufacturerName": "OSRAM",
-        "productId": ["Classic A60 RGBW", "PAR 16 50 RGBW - LIGHTIFY"],
+        "productId": [
+          "Classic A60 RGBW",
+          "CLA60 RGBW OSRAM"
+        ],
         "deviceId": 528,
         "profileId": 49246,
         "learnmode": {
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
             "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door het 6 keer te schakelen (één keer schakelen: 5 seconden uit, 5 seconden aan). De lamp zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "lightify_rgbw_gu10",
+      "name": {
+        "en": "RGBW Spot GU10 (ZigBee)",
+        "nl": "RGBW Spot GU10 (ZigBee)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "images": {
+        "large": "drivers/lightify_rgbw_gu10/assets/images/large.jpg",
+        "small": "drivers/lightify_rgbw_gu10/assets/images/small.jpg"
+      },
+      "zigbee": {
+        "manufacturerName": "OSRAM",
+        "productId": [
+          "PAR 16 50 RGBW - LIGHTIFY"
+        ],
+        "deviceId": 528,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the spot to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
+            "nl": "Zet de spot uit en weer aan.\n\nWordt de spot niet automatisch toegevoegd binnen 20 seconden, probeer dan de spot te resetten door het 6 keer te schakelen (één keer schakelen: 5 seconden uit, 5 seconden aan). De spot zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "lightify_gardenpole_rgbw",
+      "name": {
+        "en": "Gardenpole RGBW (ZigBee)",
+        "nl": "Gardenpole RGBW (ZigBee)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "images": {
+        "large": "drivers/lightify_gardenpole_rgbw/assets/images/large.png",
+        "small": "drivers/lightify_gardenpole_rgbw/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "OSRAM",
+        "productId": [
+          "Gardenpole RGBW-Lightify"
+        ],
+        "deviceId": 528,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the Gardenpole RGBW to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
+            "nl": "Zet de Gardenpole RGBW uit en weer aan.\n\nWordt het apparaat niet automatisch toegevoegd binnen 20 seconden, probeer het dan te resetten door het 6 keer te schakelen (één keer schakelen: 5 seconden uit, 5 seconden aan). De Gardenpole RGBW zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "lightify_gardenpole_mini_rgbw",
+      "name": {
+        "en": "Gardenpole Mini RGBW (ZigBee)",
+        "nl": "Gardenpole Mini RGBW (ZigBee)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "images": {
+        "large": "drivers/lightify_gardenpole_mini_rgbw/assets/images/large.png",
+        "small": "drivers/lightify_gardenpole_mini_rgbw/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "OSRAM",
+        "productId": [
+          "Gardenpole Mini RGBW-Lightify"
+        ],
+        "deviceId": 528,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the Gardenpole Mini RGBW to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
+            "nl": "Zet de Gardenpole Mini RGBW uit en weer aan.\n\nWordt het apparaat niet automatisch toegevoegd binnen 20 seconden, probeer het dan te resetten door het 6 keer te schakelen (één keer schakelen: 5 seconden uit, 5 seconden aan). De Gardenpole Mini RGBW zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "lightify_gardenspot_mini_rgb",
+      "name": {
+        "en": "Gardenspot Mini RGB (ZigBee)",
+        "nl": "Gardenspot Mini RGB (ZigBee)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "images": {
+        "large": "drivers/lightify_gardenspot_mini_rgb/assets/images/large.jpg",
+        "small": "drivers/lightify_gardenspot_mini_rgb/assets/images/small.jpg"
+      },
+      "zigbee": {
+        "manufacturerName": "OSRAM",
+        "productId": [
+          "Gardenspot RGB"
+        ],
+        "deviceId": 512,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the gardenspots to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
+            "nl": "Zet de Gardenspot Mini RGB uit en weer aan.\n\nWordt het apparaat niet automatisch toegevoegd binnen 20 seconden, probeer het dan te resetten door het 6 keer te schakelen (één keer schakelen: 5 seconden uit, 5 seconden aan). De Gardenspot Mini RGB zal knipperen om aan te geven dat hij is gereset."
           }
         }
       },
@@ -120,7 +345,11 @@
       },
       "zigbee": {
         "manufacturerName": "OSRAM",
-        "productId": "Flex RGBW",
+        "productId": [
+          "Flex RGBW",
+          "LIGHTIFY Indoor Flex RGBW",
+          "LIGHTIFY Outdoor Flex RGBW"
+        ],
         "deviceId": 528,
         "profileId": 49246,
         "learnmode": {
@@ -153,8 +382,8 @@
     {
       "id": "lightify_white",
       "name": {
-        "en": "Tunable White Bulb (ZigBee)",
-        "nl": "Tunable White Lamp (ZigBee)"
+        "en": "Tunable White Bulb E27 (ZigBee)",
+        "nl": "Tunable White Lamp E27 (ZigBee)"
       },
       "class": "light",
       "capabilities": [
@@ -168,8 +397,161 @@
       },
       "zigbee": {
         "manufacturerName": "OSRAM",
-        "productId": "Classic A60 TW",
+        "productId": [
+          "Classic A60 TW",
+          "CLA60 TW OSRAM"
+        ],
+        "deviceId": [
+          256,
+          544
+        ],
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door het 6 keer te schakelen (één keer schakelen: 5 seconden uit, 5 seconden aan). De lamp zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "lightify_white_e14",
+      "name": {
+        "en": "Tunable White Bulb E14 (ZigBee)",
+        "nl": "Tunable White Lamp E14 (ZigBee)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "images": {
+        "large": "drivers/lightify_white_e14/assets/images/large.jpg",
+        "small": "drivers/lightify_white_e14/assets/images/small.jpg"
+      },
+      "zigbee": {
+        "manufacturerName": "OSRAM",
+        "productId": "Classic B40 TW - LIGHTIFY",
         "deviceId": 544,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door het 6 keer te schakelen (één keer schakelen: 5 seconden uit, 5 seconden aan). De lamp zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "lightify_white_gu10",
+      "name": {
+        "en": "Tunable White Spot GU10 (ZigBee)",
+        "nl": "Tunable White Spot GU10 (ZigBee)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "images": {
+        "large": "drivers/lightify_white_gu10/assets/images/large.jpg",
+        "small": "drivers/lightify_white_gu10/assets/images/small.jpg"
+      },
+      "zigbee": {
+        "manufacturerName": "OSRAM",
+        "productId": "PAR16 50 TW",
+        "deviceId": 544,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the spot to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
+            "nl": "Zet de spot uit en weer aan.\n\nWordt de spot niet automatisch toegevoegd binnen 20 seconden, probeer dan de spot te resetten door het 6 keer te schakelen (één keer schakelen: 5 seconden uit, 5 seconden aan). De spot zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "lightify_dimmable_white",
+      "name": {
+        "en": "Dimmable White Bulb E27 (ZigBee)",
+        "nl": "Dimmable White Lamp E27 (ZigBee)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "drivers/lightify_dimmable_white/assets/images/large.png",
+        "small": "drivers/lightify_dimmable_white/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "OSRAM",
+        "productId": [
+          "Classic A60 W clear - LIGHTYFY"
+        ],
+        "deviceId": [
+          256
+        ],
         "profileId": 49246,
         "learnmode": {
           "instruction": {

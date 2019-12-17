@@ -1,8 +1,8 @@
 {
   "id": "com.osram.lightify.zigbee",
-  "version": "1.2.4",
+  "version": "1.3.1",
   "sdk": 2,
-  "compatibility": ">=1.5.0",
+  "compatibility": ">=3.0.0",
   "category": "lights",
   "name": {
     "en": "Osram Lightify (ZigBee)",
@@ -78,13 +78,23 @@
         "small": "drivers/lightify_rgbw/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": "OSRAM",
+        "manufacturerName": [
+          "OSRAM",
+          "LEDVANCE"
+        ],
         "productId": [
           "Classic A60 RGBW",
-          "CLA60 RGBW OSRAM"
+          "CLA60 RGBW OSRAM",
+          "CLA60 RGBW Z3"
         ],
-        "deviceId": 528,
-        "profileId": 49246,
+        "deviceId": [
+          528,
+          269
+        ],
+        "profileId": [
+          49246,
+          260
+        ],
         "learnmode": {
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
@@ -132,12 +142,22 @@
         "small": "drivers/lightify_rgbw_gu10/assets/images/small.jpg"
       },
       "zigbee": {
-        "manufacturerName": "OSRAM",
-        "productId": [
-          "PAR 16 50 RGBW - LIGHTIFY"
+        "manufacturerName": [
+          "OSRAM",
+          "LEDVANCE"
         ],
-        "deviceId": 528,
-        "profileId": 49246,
+        "productId": [
+          "PAR 16 50 RGBW - LIGHTIFY",
+          "PAR16 RGBW Z3"
+        ],
+        "deviceId": [
+          528, 
+          269
+        ],
+        "profileId": [
+          49246,
+          260
+        ],
         "learnmode": {
           "instruction": {
             "en": "Toggle the spot to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
@@ -187,7 +207,8 @@
       "zigbee": {
         "manufacturerName": "OSRAM",
         "productId": [
-          "Gardenpole RGBW-Lightify"
+          "Gardenpole RGBW-Lightify",
+          "Gardenpole Mini RGBW OSRAM"
         ],
         "deviceId": 528,
         "profileId": 49246,
@@ -547,7 +568,8 @@
       "zigbee": {
         "manufacturerName": "OSRAM",
         "productId": [
-          "Classic A60 W clear - LIGHTYFY"
+          "Classic A60 W clear - LIGHTYFY",
+          "Classic A60 W clear - LIGHTIFY"
         ],
         "deviceId": [
           256

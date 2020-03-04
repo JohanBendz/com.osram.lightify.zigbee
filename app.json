@@ -85,11 +85,13 @@
         "productId": [
           "Classic A60 RGBW",
           "CLA60 RGBW OSRAM",
-          "CLA60 RGBW Z3"
+          "CLA60 RGBW Z3",
+          "A60 TW Z3"
         ],
         "deviceId": [
           528,
-          269
+          269,
+          268
         ],
         "profileId": [
           49246,

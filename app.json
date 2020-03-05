@@ -29,6 +29,53 @@
   },
     "drivers": [
     {
+      "id": "ledvance_par16_dim_z3",
+      "name": {
+        "en": "White Spot GU10 (ZigBee)",
+        "nl": "White Spot GU10 (ZigBee)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "images": {
+        "large": "drivers/ledvance_par16_dim_z3/assets/images/large.jpg",
+        "small": "drivers/ledvance_par16_dim_z3/assets/images/small.jpg"
+      },
+      "zigbee": {
+        "manufacturerName": "OSRAM",
+        "productId": "PAR16 DIM Z3",
+        "deviceId": 257,
+        "profileId": 260,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the spot to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times (one toggle: 5 seconds off, 5 seconds on). It will flash to indicate it has been reset.",
+            "nl": "Zet de spot uit en weer aan.\n\nWordt de spot niet automatisch toegevoegd binnen 20 seconden, probeer dan de spot te resetten door het 6 keer te schakelen (één keer schakelen: 5 seconden uit, 5 seconden aan). De spot zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
       "id": "lightify_plug",
       "name": {
         "en": "Plug (ZigBee)",
